@@ -9,10 +9,10 @@ clc;
 m = 32; n = 32;
 
 % create a random matrix in R^{m,n}
-A = randn([m,n]);
+A = randn(m,n);
 
 % create random vector in R^m
-b = randn([m,1]);
+b = randn(m,1);
 
 % generate the bounds for the inequality constraint
 % $l \succeq x \succeq u$

@@ -8,10 +8,10 @@ clc;
 m = 32; n = 32;
 
 % create a random matrix of size m x n
-A = randn([m,n]);
+A = randn(m,n);
 
 % create random vector in R^m
-b = randn([m,1]);
+b = randn(m,1);
 
 % solve least squares problem ||Ax - b||
 x1 = lsqsol(A,b);

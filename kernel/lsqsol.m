@@ -6,6 +6,8 @@ function x = lsqsol(A,b)
 % inputs:
 %    A         n x m matrix
 %    b         right hand side (vector)
+% outputs:
+%    x         solution of least-squares problem
 
 % we use backslash, which will default to a QR fractorization
 x = A\b;

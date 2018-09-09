@@ -15,7 +15,7 @@ A = randn(m,n);
 b = randn(m,1);
 
 % generate the bounds for the inequality constraint
-% $l \succeq x \succeq u$
+% l <= x <= u
 bnds = randn(n,2);
 l = min( bnds, [], 2 );
 u = max( bnds, [], 2 );

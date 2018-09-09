@@ -5,8 +5,10 @@ function x = lsqsolcvx(A,b)
 % inputs:
 %    A         n x m matrix
 %    b         right hand side (vector)
+% outputs:
+%    x         solution
 
-[m,n] = size(A);
+n = size(A,2);
 
 % call cvx functionality
 cvx_begin

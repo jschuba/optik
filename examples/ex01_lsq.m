@@ -1,7 +1,8 @@
 clear, close all;
 clc;
 
-m = 32; n = 16;
+% set up problem sizes
+m = 32; n = 32;
 
 % create a random matrix of size m x n
 A = rand([m,n]);

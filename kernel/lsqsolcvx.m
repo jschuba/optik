@@ -4,10 +4,10 @@ function x = lsqsolcvx(A,b)
 
 [m,n] = size(A);
 
+% call cvx functionality
 cvx_begin
-    variable y(n);
-    minimize(norm(A*y - b))
+    variable x(n);
+    minimize(norm(A*x - b))
 cvx_end
-x = y;
 
 end

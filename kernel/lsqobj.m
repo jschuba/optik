@@ -21,7 +21,7 @@ switch flag
 	case 'j'
 		% evaluate objective functional j(x) = ||Ax-b||^2_2
 		dr = A*x - b;
-		result = dr(:)'*dr(:);
+		result = 0.5*dr(:)'*dr(:);
 	case 'g'
 		% evaluate gradient g(x) = A^\T(Ax-b)
 		dr = A*x - b;

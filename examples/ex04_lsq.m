@@ -10,12 +10,7 @@ b = randn(m,1);
 % define function handle for objective
 j = @(x,flag) lsqobj(A,x,b,flag);
 
-% compute hessian matrix
-H = lsqobj(A,[],[],'h');
-
-
 x = randn(n,1);
 fprintf('objective value:        %e\n', j(x,'j'));
 fprintf('norm of gradient:       %e\n', norm(j(x,'g')));
-fprintf('norm of hessian matvec: %e\n', norm(H*x));
 

@@ -12,9 +12,7 @@ function [result] = lsqobj(A,x,b,flag)
 %              'g'    gradient
 %              'h'    hessian
 % outputs:
-%    result    value of objective functional, gradient or
-%              hessian matvec
-
+%    result    value of objective functional or gradient
 
 
 switch flag
@@ -26,9 +24,6 @@ switch flag
 		% evaluate gradient g(x) = A^\T(Ax-b)
 		dr = A*x - b;
 		result = A'*dr;
-	case 'h'
-		% compute hessian
-		result = A'*A;
 	otherwise
 		error('flag not defined');
 end

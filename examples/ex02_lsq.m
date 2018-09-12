@@ -25,5 +25,5 @@ legend('ML-QR', 'CVX');
 title('solution of least-squares');
 
 % show the relative error
-fprintf('error norm (QR)  %e\n', norm(A*x1 - b)/norm(x1));
-fprintf('error norm (CVX) %e\n', norm(A*x2 - b)/norm(x2));
+fprintf('error norm (ML-QR) %e\n', norm(A*x1 - b)/norm(x1));
+fprintf('error norm (CVX)   %e\n', norm(A*x2 - b)/norm(x2));

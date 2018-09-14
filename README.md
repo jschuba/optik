@@ -10,6 +10,6 @@ Some of the code provided in this repository requires that [CVX](http://cvxr.com
 Some examples can be found in the examples folder.
 
 ## Usage
-Before you run any of the example, it is advised to run the startup script:
+Before you run any of the examples, it is advised to run the startup script:
 
 ```startup```

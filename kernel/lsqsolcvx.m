@@ -1,3 +1,8 @@
+%######################################################
+% This code is part of the Matlab-based toolbox
+% OPTIK --- Optimization Toolkit
+% For details see https://github.com/andreasmang/optik
+%######################################################
 function x = lsqsolcvx(A,b)
 % LSQSOLCVX compute solution of constrained least squares
 % problem based on CVX functions

@@ -1,3 +1,8 @@
+%######################################################
+% This code is part of the Matlab-based toolbox
+% OPTIK --- Optimization Toolkit
+% For details see https://github.com/andreasmang/optik
+%######################################################
 function [result] = lsqobj(A,x,b,flag)
 % LSQOBJ implementation of objective function for
 % least squares problem
@@ -24,6 +29,9 @@ switch flag
 		% evaluate gradient g(x) = A^\T(Ax-b)
 		dr = A*x - b;
 		result = A'*dr;
+	case 'h'
+		% compute hessian A^\T A
+		result = A'*A;
 	otherwise
 		error('flag not defined');
 end

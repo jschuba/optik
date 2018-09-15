@@ -1,3 +1,8 @@
+%######################################################
+% This code is part of the Matlab-based toolbox
+% OPTIK --- Optimization Toolkit
+% For details see https://github.com/andreasmang/optik
+%######################################################
 function x = lsqsol(A,b)
 % LSQSOL compute solution of unconstrained least squares problem,
 % i.e., min_x ||A*x - b||,

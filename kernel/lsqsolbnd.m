@@ -1,3 +1,8 @@
+%######################################################
+% This code is part of the Matlab-based toolbox
+% OPTIK --- Optimization Toolkit
+% For details see https://github.com/andreasmang/optik
+%######################################################
 function x = lsqsolbnd(A,b,l,u)
 % LSQSOLBND function to solve the convex optimization problem
 % (least squares problem) with box constraints / bounds

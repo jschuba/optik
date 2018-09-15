@@ -8,7 +8,7 @@ function plotobj(f0,omega,x0,n,d1,d2)
 %
 % inputs:
 %    f0        function handle; takes n-d array as input
-%    domain    domain we are going to explore
+%    omega     domain we are going to explore
 %    x0        point around which we evaluate the objective function
 %    d1        index for direction along which we are going to explore objective
 %    d2        index for direction along which we are going to explore objective

@@ -5,7 +5,7 @@ clc;
 % using CVX and the default Matlab approach and compare the results
 
 % set up problem sizes
-m = 32; n = 32;
+m = 10; n = 100;
 
 % create a random matrix of size m x n
 A = randn(m,n);

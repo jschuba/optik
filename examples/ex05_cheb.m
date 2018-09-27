@@ -1,5 +1,4 @@
 % this script is based on an example found in CVX
-% see
 
 % the goal is to find the Chebyshev center of a polyhedron, i.e.,
 % the largest euclidean ball that lies in a polyhedron

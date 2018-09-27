@@ -6,8 +6,9 @@
 
 % this script is based on an example found in CVX
 
-% the goal is to find the Chebyshev center of a polyhedron, i.e.,
-% the largest euclidean ball that lies in a polyhedron
+% the goal is to find the Chebyshev center of a
+% polyhedron, i.e., find the the largest euclidean ball
+% that lies in a polyhedron
 %
 %         P = {x \in R^2 : a_i'*x <= b_i, i=1,...,m}
 %

@@ -26,18 +26,19 @@ b = ones(4,1);
 
 % create and solve the problem
 cvx_begin
-    variable r(1)
-    variable xc(2)
-    maximize ( r )
-    a1'*xc + r*sqrt(a1'*a1) <= b(1);
-    a2'*xc + r*sqrt(a2'*a2) <= b(2);
-    a3'*xc + r*sqrt(a3'*a3) <= b(3);
-    a4'*xc + r*sqrt(a4'*a4) <= b(4);
+	variable r(1)
+	variable xc(2)
+	maximize ( r )
+	subject to
+		a1'*xc + r*sqrt(a1'*a1) <= b(1);
+		a2'*xc + r*sqrt(a2'*a2) <= b(2);
+		a3'*xc + r*sqrt(a3'*a3) <= b(3);
+		a4'*xc + r*sqrt(a4'*a4) <= b(4);
 cvx_end
 
 
 % display the results
-x     = linspace(-2,2);
+x	  = linspace(-2,2);
 theta = 0:pi/100:2*pi;
 
 figure()

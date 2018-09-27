@@ -1,3 +1,9 @@
+%######################################################
+% This code is part of the Matlab-based toolbox
+% OPTIK --- Optimization Toolkit
+% For details see https://github.com/andreasmang/optik
+%######################################################
+
 % this script is based on an example found in CVX
 
 % the goal is to find the Chebyshev center of a polyhedron, i.e.,

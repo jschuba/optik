@@ -38,7 +38,7 @@ cvx_end
 
 
 % display the results
-x	  = linspace(-2,2);
+x     = linspace(-2,2);
 theta = 0:pi/100:2*pi;
 
 figure()

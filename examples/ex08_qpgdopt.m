@@ -61,15 +61,16 @@ for iter = 1:itermax
     
 	% minimizer is x^\star = (0,0)^\T
 	delta = sqrt((xtrue(1) - x(1))^2 + (xtrue(1) - x(2))^2);
+    gx    = g(x);
 
-	fprintf('%3d   %+4.8e   %+4.8e   %+4.8e   %+4.8e   %+4.8e\n',iter, f0eval(iter), x(1), x(2), norm(g(x))/ng0, delta);
+	fprintf('%3d   %+4.8e   %+4.8e   %+4.8e   %+4.8e   %+4.8e\n',iter, f0eval(iter), x(1), x(2), norm(gx)/ng0, delta);
     if delta < opttol
         converged = true;
         break;
     end
     
     % compute line search parameter analytically
-	alpha = (c(1)^2*x(1)^2 + c(2)^2*x(2)^2) / (c(1)^3*x(1)^2 + c(2)^3*x(2)^2);
+    alpha = gx(:)'*gx(:)/(gx(:)'*Q*gx(:));
 
     % update iterate
     y(:,iter+1) = x - alpha.*g(x);

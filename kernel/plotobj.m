@@ -39,6 +39,10 @@ end
 if nargin > 3
 	if ~exist('n','var')
 		n = [100,100];
+    else
+        if isempty(n)
+            n = [100,100];
+        end
 	end
 else
 	n = [100,100];
@@ -48,7 +52,19 @@ end
 % this is to generalize in case we are plotting a problem in R^n
 if nargin < 5
 	d1 = 1; d2 = 2;
+else
+	if ~exist('d1','var')
+    	d1 = 1; d2 = 2;
+    else
+        if isempty(d1)
+            d1 = 1;
+        end
+        if isempty(d2)
+            d2 = 2;
+        end
+    end
 end
+
 
 % compute step size inside domain
 h = (omega(2:2:end) - omega(1:2:end))./n;
@@ -73,8 +89,11 @@ end
 
 % open figure
 figure()
+subplot(1,2,1);
 surfc(x1,x2,f);
-title('f0(x)');
+
+subplot(1,2,2);
+contour(x1,x2,f);
 
 
 end

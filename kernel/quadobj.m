@@ -22,13 +22,13 @@ function [result] = quadobj(Q,x,b,c,flag)
 
 switch flag
 	case 'j'
-		% evaluate objective functional j(x) = ||Ax-b||^2_2
+		% evaluate objective functional of general quadratic
 		result = 0.5*x'*Q*x + b'*x + c;
 	case 'g'
-		% evaluate gradient g(x) = A^\T(Ax-b)
+		% evaluate gradient g(x) = Q*x + b
 		result = Q*x + b;
 	case 'h'
-		% compute hessian A^\T A
+		% compute hessian Q
 		result = Q;
 	otherwise
 		error('flag not defined');

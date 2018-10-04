@@ -9,9 +9,9 @@ clc;
 n = 2;
 
 % create random matrices and vectors
-A = [ 2, 0; 0, -2]; b = zeros(n,1); % indefinite
-A = [-2, 0; 0,  2]; b = zeros(n,1); % indefinite
-A = [ 2, 0; 0,  0]; b = -ones(n,1); % semi-definite
+%A = [ 2, 0; 0, -2]; b = zeros(n,1); % indefinite
+%A = [-2, 0; 0,  2]; b = zeros(n,1); % indefinite
+%A = [ 2, 0; 0,  0]; b = -ones(n,1); % semi-definite
 A = [ 2, 0; 0,  0]; b = zeros(n,1); % semi-definite
 
 

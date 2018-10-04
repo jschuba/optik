@@ -8,17 +8,17 @@ clc;
 % this script implements gradient descent for a simple
 % test problem with analytical line search
 
-itermax = 100; % max number of iterations
-opttol  = 1e-12;
-xtrue   = [0.0;0.0];
+itermax = 100;				% max number of iterations
+opttol  = 1e-12;			% tolerance for optimization
+xtrue   = [0.0;0.0];		% true solution
 
 % c = [1; 1]; % well conditioned
 c = [1,10]; % badly conditioned
 
 % prevent user from attempting to solve problems that will not work
 if (c(1) <= 0 || c(2) <= 0)
-    warning('does not work for non-convex problems');
-    return;
+	warning('does not work for non-convex problems');
+	return;
 end
 
 % compute initial guess (non-zero, since 0 is the solution)
@@ -56,24 +56,24 @@ f0eval = zeros(itermax,1);
 
 % perform gradient descent with analytical line search
 for iter = 1:itermax
-    
-    f0eval(iter) = f0(x);
-    
+
+	f0eval(iter) = f0(x);
+
 	% minimizer is x^\star = (0,0)^\T
 	delta = sqrt((xtrue(1) - x(1))^2 + (xtrue(1) - x(2))^2);
-    gx    = g(x);
+	gx    = g(x);
 
 	fprintf('%3d   %+4.8e   %+4.8e   %+4.8e   %+4.8e   %+4.8e\n',iter, f0eval(iter), x(1), x(2), norm(gx)/ng0, delta);
-    if delta < opttol
-        converged = true;
-        break;
-    end
-    
-    % compute line search parameter analytically
-    alpha = gx(:)'*gx(:)/(gx(:)'*Q*gx(:));
+	if delta < opttol
+		converged = true;
+		break;
+	end
 
-    % update iterate
-    y(:,iter+1) = x - alpha.*g(x);
+	% compute line search parameter analytically
+	alpha = gx(:)'*gx(:)/(gx(:)'*Q*gx(:));
+
+	% update iterate
+	y(:,iter+1) = x - alpha.*g(x);
 	x = y(:,iter+1);
 end
 
@@ -85,7 +85,7 @@ if (converged)
 else
 	fprintf('%s\n',repmat('-' , [1,93]));
 	fprintf(' error after %d iterations: %2.12e (cond Q = %2.12e)\n', iter, delta,max(c)/min(c));
-	fprintf('%s\n',repmat('-' , [1,93]));    
+	fprintf('%s\n',repmat('-' , [1,93]));
 end
 
 % plot results
@@ -114,6 +114,5 @@ s = surfc(x1,x2,f0s,'FaceAlpha',0.8,'EdgeColor','none');
 hold on;
 scatter3(y(1,1:iter),y(2,1:iter),f0eval(1:iter),'r','filled');
 plot3(y(1,1:iter),y(2,1:iter),f0eval(1:iter),'-','LineWidth',2);
-
 zlim([min(f0s(:))-0.1*min(f0s(:)),max(f0s(:))]);
 hold off;

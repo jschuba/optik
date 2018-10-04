@@ -53,15 +53,11 @@ end
 if nargin < 5
 	d1 = 1; d2 = 2;
 else
-	if ~exist('d1','var')
+    if ~exist('d1','var')
     	d1 = 1; d2 = 2;
     else
-        if isempty(d1)
-            d1 = 1;
-        end
-        if isempty(d2)
-            d2 = 2;
-        end
+        if isempty(d1), d1 = 1; end
+        if isempty(d2), d2 = 2; end
     end
 end
 

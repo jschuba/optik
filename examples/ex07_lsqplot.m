@@ -6,11 +6,15 @@
 clear, close all;
 clc;
 
-m = 32; n = 32;
+n = 2;
 
 % create random matrices and vectors
-A = randn(n,m);
-b = zeros(m,1);
+A = [ 2, 0; 0, -2]; b = zeros(n,1); % indefinite
+A = [-2, 0; 0,  2]; b = zeros(n,1); % indefinite
+A = [ 2, 0; 0,  0]; b = -ones(n,1); % semi-definite
+A = [ 2, 0; 0,  0]; b = zeros(n,1); % semi-definite
+
+
 x0 = zeros(n,1);
 
 % define function handle for objective

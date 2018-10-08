@@ -6,5 +6,14 @@
 clear, close all;
 clc;
 
-addpath('examples');
-addpath('kernel');
+m = 32; n = 32;
+
+% create random matrices and vectors
+A = randn(n,m);
+b = zeros(m,1);
+x0 = zeros(n,1);
+
+% define function handle for objective
+j = @(x) quadobj(A,x,b,0,'j');
+
+plotobj(j,[-1,1,-1,1],x0);
